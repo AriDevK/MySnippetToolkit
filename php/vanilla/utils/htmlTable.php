@@ -75,7 +75,7 @@ class HtmlTable
                 id: this.id, 
                 row : parseInt(attr(this, "row")),
                 data : [...tbl(this).tHead.rows[0].cells].map(h => h.innerText).slice(0, -1).reduce((a, key, i) => {
-                    return {...a, [key]: tbl(this).rows[parseInt(attr(this, "row"))].cells[0].innerText}
+                    return {...a, [key]: tbl(this).rows[parseInt(attr(this, "row"))].cells[i].innerText}
                 }, {})
             })';
         return "input type='button' value='" . $caption . "' class='" . $cssClass . "' onclick='" . $onClick . "'";
